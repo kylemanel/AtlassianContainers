@@ -1,0 +1,7 @@
+# THESE ARE COMMENTED BECAUSE THEY ARE RETAINED IN THE HOME DIRECTORY; ONLY FOR NEW DEPLOYMENT
+#Database Configuration:
+# RUN sed -i '/hibernate.connection.driver_class/ c\    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>' "${CONFLUENCE_HOME}"/confluence.cfg.xml
+# RUN sed -i '/hibernate.connection.password/ c\    <property name="hibernate.connection.password">"${CONFLUENCE_DB_PASSWORD}"</property>' "${CONFLUENCE_HOME}"/confluence.cfg.xml
+# RUN sed -i '/hibernate.connection.url/ c\ <property name="hibernate.connection.url">jdbc:${DB_SERVER_ADDRESS}/${DB_NAME}</property>' "${CONFLUENCE_HOME}"/confluence.cfg.xml
+# RUN sed -i '/hibernate.connection.username/ c\    <property name="hibernate.connection.username">${DB_USER}</property>/' "${CONFLUENCE_HOME}"/confluence.cfg.xml
+# RUN sed -i '/hibernate.dialect/ c\     <property name="hibernate.dialect">com.atlassian.confluence.impl.hibernate.dialect.PostgreSQLDialect</property>' "${CONFLUENCE_HOME}"/confluence.cfg.xml

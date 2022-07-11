@@ -10,11 +10,12 @@ PORTS=" -p 8080:8080"
 RUN_OPTIONS=" -d --restart=always"
 USER=" --user 8080:8080"
     USER_INFO="/etc/passwd:/etc/passwd:ro"
+VENDOR="company_name"
 
 DOCKER_FILE=" -f $DOCKER_DIRECTORY/Dockerfiles/$NAME/Dockerfilev$VERSION"
 DOCKER_VERSION=$VERSION.1
 ENV_FILE=" --env-file=$DOCKER_DIRECTORY/$NAME.env"
-IMAGE=" inbaytech/$NAME"
+IMAGE=" $VENDOR/$NAME"
 INSTALLATION_DIR="/opt/atlassian/atlassian-$NAME-$VERSION"
 NAME_PROMPT=" --name $NAME-$VERSION"
     DATA_DIR="/opt/docker/var/volumes/$NAME/data:/var/atlassian/$NAME"

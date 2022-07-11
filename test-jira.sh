@@ -6,12 +6,13 @@ FROM=7.12.3
 VERSION=8.0.1
 PORTS=" -p 8198:8080"
 RUN_OPTIONS=" -d --restart=always"
+VENDOR="company_name"
 USER=" --user 8080:8080"
     USER_INFO=" /etc/passwd:/etc/passwd:ro"
     DOCKER_FILE=" -f $DOCKER_DIRECTORY/Dockerfiles/$NAME/Dockerfilev$VERSION"
 DOCKER_VERSION=$VERSION.1
     ENV_FILE=" --env-file=$DOCKER_DIRECTORY/$NAME.env"
-IMAGE=" inbaytech/$NAME"
+IMAGE=" ${VENDOR}/$NAME"
     INSTALL_DIR="/opt/atlassian/atlassian-$NAME-$VERSION"
     OLD_INSTALL_DIR="/opt/atlassian/atlassian-$NAME-$FROM"
     NAME_PROMPT=" --name $NAME-$VERSION-test"
